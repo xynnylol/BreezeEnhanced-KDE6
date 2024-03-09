@@ -47,7 +47,7 @@ add_definitions(-DTRANSLATION_DOMAIN="breeze_kwin_deco")
 
 
 find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS CoreAddons GuiAddons ConfigWidgets WindowSystem I18n)
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Widgets DBus)
+find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Widgets DBus Core5Compat)
 
 ################# includes #################
 add_subdirectory(libbreezecommon)
@@ -105,3 +105,5 @@ target_link_libraries(breezeenhanced
 
 install(TARGETS breezeenhanced DESTINATION ${KDE_INSTALL_PLUGINDIR}/${KDECORATION_PLUGIN_DIR})
 kcmutils_generate_desktop_file(breezeenhanced)
+
+add_subdirectory(config)
